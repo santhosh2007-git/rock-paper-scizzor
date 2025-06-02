@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let's play</title>
+</head>
+<body style="background-color: rgb(28, 26, 26);">
+
+    <h1 style="text-align: center;color: blue;font-family: Arial, Helvetica, sans-serif;">Rock Paper Scissors</h1>
+
+    <h2 style="color: blue;font-family: Arial, Helvetica, sans-serif;text-align: center;">Click on the button to play</h2>
+
+    <button style="border-radius: 15px;height: 50px;width: 100px;background-color: green;color: white;margin-left: 30vw;cursor: pointer;" onclick="decidemove(Math.random());
+    counter=1;
+    ">Play</button>
+
+    <button style="border-radius: 15px;height: 50px;width: 100px;background-color: red;color: white;margin-left: 30vw;cursor: pointer;" onclick=" present_score=0;
+     high_score=0;
+     computer_move=Notdefined;
+     result=computer_move;">Reset</button>
+    
+    <p style="color: green;font-family: Arial, Helvetica, sans-serif;text-align: center;">Choose your weapon</p>
+
+    <img src="hi.png" style="width: 400px; height: 200px; display: block; border: solid 1px black;border-radius: 30px;margin-left: auto;margin-right: auto;">
+    <div style="margin-left: auto;margin-right: auto;">
+    <button onclick="
+    if(counter==1){
+        if(computer_move === 'Rock') {
+            result = 'Draw';
+        } else if (computer_move === 'Scissors') {
+            result = 'Win';
+            present_score += 1;
+            if (present_score > high_score) {
+                high_score = present_score;
+            }
+        } else {
+            result = 'Lose';
+            if( present_score > 0) {
+                present_score -= 1;
+            } else {
+                present_score = 0;
+            }
+            
+        }
+        counter=0;
+    }
+        
+        print();
+        " style="position: absolute;left: 10px;top: 390px;left: 565px;border-radius: 15px;height: 30px;background-color: rgb(83, 32, 32);color: white;cursor: pointer;" >Rock</button>
+
+    <button style="position: absolute;top: 390px;left: 685px;border-radius: 15px;height: 30px;background-color: blue;color: white;cursor: pointer;" onclick="
+    if(counter==1)
+    {
+        if(computer_move === 'Rock') {
+        result = 'Lose';
+        if (present_score > 0) {
+            present_score -= 1;
+        } else {
+            present_score = 0;
+        }
+    } else if (computer_move === 'Paper') {
+        result = 'Win';
+        present_score += 1;
+        if (present_score > high_score) {
+            high_score = present_score;
+        }
+    } else {
+        result = 'Draw';
+    }
+    counter=0;
+    }
+    print();
+    ">scizors</button>
+
+    <button style="top: 390px;position: absolute;left: 815px;border-radius: 15px;height: 30px;background-color: grey;color: white;cursor: pointer;"onclick="
+    if(counter==1){
+
+    if (computer_move === 'Rock') {
+            result = 'Win';
+            present_score += 1;
+            if (present_score > high_score) {
+                high_score = present_score;
+            }
+        } else if (computer_move === 'Scissors') {
+            result = 'Lose';
+            if (present_score > 0) {
+                present_score -= 1;
+            } else {
+                present_score = 0;
+            }
+        } else {
+            result = 'Draw';
+        }
+    counter=0;
+    }
+    print();
+    ">Paper</button>
+        </div>
+    <h1 style="text-align: center;color: blue;font-family: Arial, Helvetica, sans-serif;">Scorecard</h1>
+
+    <table style="padding-left: 20vw">
+        <tr>
+            <th style="color: blue;font-family: Arial, Helvetica, sans-serif;font-size: 20px;padding-right: 50px;">Result</th>
+            <th style="color: blue;font-family: Arial, Helvetica, sans-serif;font-size: 20px;padding-right: 50px;">computer move</th>
+            <th style="color: blue;font-family: Arial, Helvetica, sans-serif;font-size: 20px;padding-right: 50px;">Present Score</th>
+            <th style="color: blue;font-family: Arial, Helvetica, sans-serif;font-size: 20px;padding-right: 50px;">High score</th>
+            
+        </tr>
+        <tr>
+            <td style="color: white;font-family: Arial, Helvetica, sans-serif;" id ="1"></td>
+            <td style="color: white;font-family: Arial, Helvetica, sans-serif;" id="2"></td>
+            <td style="color: white;font-family: Arial, Helvetica, sans-serif;" id="3"></td>
+            <td style="color: white;font-family: Arial, Helvetica, sans-serif;" id="4"></td>
+        </tr>
+        </tr>
+    </table>
+</body>
+<script>
+    let present_score=0;
+    let high_score=0;
+    let computer_move;
+    let result;
+    function decidemove(random) {
+        random = Math.floor(random * 3);
+        if (random >= 0 && random < 1) {
+            computer_move = "Rock";
+        } else if (random >= 1 && random < 2) {
+            computer_move = "Scissors";
+        } else {
+            computer_move = "Paper";
+        }
+    }
+    function print() {
+        document.getElementById("1").textContent = result;
+        document.getElementById("2").textContent = computer_move;
+    document.getElementById("3").textContent = present_score;
+    document.getElementById("4").textContent = high_score;
+    }
+        document.getElementById("1").textContent = result;
+        document.getElementById("2").textContent = computer_move;
+    document.getElementById("3").textContent = present_score;
+    document.getElementById("4").textContent = high_score;
+    let counter = 0;
+</script>
+</html>
