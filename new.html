@@ -11,21 +11,26 @@
 
     <h2 style="color: blue;font-family: Arial, Helvetica, sans-serif;text-align: center;">Click on the button to play</h2>
 
-    <button style="border-radius: 15px;height: 50px;width: 100px;background-color: green;color: white;margin-left: 30vw;cursor: pointer;" onclick="decidemove(Math.random());
+    <button style="border-radius: 15px;height: 50px;width: 100px;background-color: green;color: white;margin-left: 30vw;cursor: pointer;" onclick="
     counter=1;
     ">Play</button>
 
-    <button style="border-radius: 15px;height: 50px;width: 100px;background-color: red;color: white;margin-left: 30vw;cursor: pointer;" onclick=" present_score=0;
-     high_score=0;
-     computer_move=Notdefined;
-     result=computer_move;
-        print();">Reset</button>
+    <button style="border-radius: 15px;height: 50px;width: 100px;background-color: red;color: white;margin-left: 30vw;cursor: pointer;"
+    onclick="
+    present_score=0;
+    high_score=0;
+    computer_move='.....';
+    result=computer_move;
+    print();
+    ">
+        Reset
+    </button>
     
     <p style="color: green;font-family: Arial, Helvetica, sans-serif;text-align: center;">Choose your weapon</p>
 
     <img src="hi.png" style="width: 400px; height: 200px; display: block; border: solid 1px black;border-radius: 30px;margin-left: auto;margin-right: auto;">
     <div style="margin-left: auto;margin-right: auto;">
-    <button onclick="
+    <button onclick="decidemove(Math.random());
     if(counter==1){
         if(computer_move === 'Rock') {
             result = 'Draw';
@@ -44,13 +49,12 @@
             }
             
         }
-        counter=0;
     }
         
         print();
-        " style="position: absolute;top: 390px;left: 460px;border-radius: 15px;height: 30px;background-color: rgb(83, 32, 32);color: white;cursor: pointer;" >Rock</button>
+        " style="position: absolute;left: 10px;top: 390px;left: 565px;border-radius: 15px;height: 30px;background-color: rgb(83, 32, 32);color: white;cursor: pointer;" >Rock</button>
 
-    <button style="position: absolute;top: 390px;left: 580px;border-radius: 15px;height: 30px;background-color: blue;color: white;cursor: pointer;" onclick="
+    <button style="position: absolute;top: 390px;left: 685px;border-radius: 15px;height: 30px;background-color: blue;color: white;cursor: pointer;" onclick="decidemove(Math.random());
     if(counter==1)
     {
         if(computer_move === 'Rock') {
@@ -69,12 +73,11 @@
     } else {
         result = 'Draw';
     }
-    counter=0;
     }
     print();
     ">scizors</button>
 
-    <button style="top: 390px;position: absolute;left: 710px;border-radius: 15px;height: 30px;background-color: grey;color: white;cursor: pointer;"onclick="
+    <button style="top: 390px;position: absolute;left: 815px;border-radius: 15px;height: 30px;background-color: grey;color: white;cursor: pointer;" onclick="decidemove(Math.random());
     if(counter==1){
 
     if (computer_move === 'Rock') {
@@ -93,7 +96,6 @@
         } else {
             result = 'Draw';
         }
-    counter=0;
     }
     print();
     ">Paper</button>
@@ -120,8 +122,8 @@
 <script>
     let present_score=0;
     let high_score=0;
-    let computer_move;
-    let result;
+    let computer_move='....';
+    let result='....';
     function decidemove(random) {
         random = Math.floor(random * 3);
         if (random >= 0 && random < 1) {
@@ -133,10 +135,10 @@
         }
     }
     function print() {
-        document.getElementById("1").textContent = result;
-        document.getElementById("2").textContent = computer_move;
-    document.getElementById("3").textContent = present_score;
-    document.getElementById("4").textContent = high_score;
+        document.getElementById('1').textContent = result;
+        document.getElementById('2').textContent = computer_move;
+        document.getElementById('3').textContent = present_score;
+        document.getElementById('4').textContent = high_score;
     }
         document.getElementById("1").textContent = result;
         document.getElementById("2").textContent = computer_move;
